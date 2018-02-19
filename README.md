@@ -1,4 +1,10 @@
 # TestGuru Application
 
-Forged in ThinkNetica <br />
-By Jakunin Oleg
+## Сущности проекта:
+
+* Тесты
+* Администраторы тестов
+* Пользователи
+
+### Forged in ThinkNetica <br />
+### By Jakunin Oleg
