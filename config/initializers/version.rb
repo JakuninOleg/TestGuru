@@ -1,3 +1,5 @@
-module TestGuruInfo
-  VERSION = 'alpha 0.0.1'
+module TestGuru
+  class Aplication
+    VERSION = '0.1.0'
+  end
 end
