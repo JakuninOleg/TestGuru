@@ -11,14 +11,17 @@ Category.create([{ name: 'Ruby' },
                  { name: 'Python' },
                  { name: 'HTML' }])
 
-Test.create([{ title: 'OOP', category_id: 1 },
-             { title: 'React', level: 4, category_id: 2 },
-             { title: 'Big Data', level: 3, category_id: 3 },
-             { title: 'Bootstrap', level: 2, category_id: 4 },
-             { title: 'Metaprogramming', category_id: 1 }])
+Admin.create(name: 'Jakunin Oleg')
 
-User.create([{ name: 'Student1' },
-                     { name: 'Student2' }])
+Test.create([{ title: 'OOP', category_id: 1, admin_id: 1 },
+             { title: 'React', level: 4, category_id: 2, admin_id: 1 },
+             { title: 'Big Data', level: 3, category_id: 3, admin_id: 1 },
+             { title: 'Bootstrap', level: 0, category_id: 4, admin_id: 1 },
+             { title: 'Metaprogramming', category_id: 1, admin_id: 1 },
+             { title: 'Rails', level: 6, category_id: 1, admin_id: 1 }])
+
+User.create([{ name: 'Student1', email: 'student1@gmail.com' },
+             { name: 'Student2', email: 'student2@gmail.com' }])
 
 Question.create([{ body: 'What is a class?', test_id: 1 },
                  { body: 'Component lifecycle', test_id: 2 },

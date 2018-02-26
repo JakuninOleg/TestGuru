@@ -6,8 +6,14 @@ class Test < ApplicationRecord
   belongs_to :category
   belongs_to :admin
 
-  def self.sorted_category_array(category)
-    Test.joins('JOIN categories ON tests.category_id = categories.id').
-    where(categories: { name: category }).order('tests.title DESC').pluck('title')
-  end
+  scope :easy, -> { where(level: 0..1) }
+  scope :medium, -> { where(level: 2..4) }
+  scope :hard, -> { where(level: 5..Float::INFINITY) }
+
+  scope :categories, -> { joins(:category).order('tests.title ASC').pluck('title') }
+  scope :category, -> (category) { joins(:category).
+    where(categories: { name: category }).order('tests.title DESC').pluck('title') }
+
+  validates :title, presence: true, uniqueness: { scope: :level }
+  validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 end
