@@ -5,6 +5,6 @@ class User < ApplicationRecord
   scope :passed_tests, -> (user, difficulty) { Test.joins(:test_passages).
     where(level: difficulty, test_passages: { user_id: user.id }) }
 
-    validates :name, presence: true
-    validates :email, presence: true
+  validates :name, presence: true
+  validates :email, presence: true
 end
