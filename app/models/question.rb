@@ -4,12 +4,5 @@ class Question < ApplicationRecord
   belongs_to :test
 
   validates :body, presence: true
-
-  validate :validate_questions
-
-  private
-
-  def validate_questions
-    errors.add(:answers, 'Неверное количество ответов') if answers.size != 1..4
-  end
+  validates :answers, length: { in: 1..4 }
 end
