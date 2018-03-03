@@ -1,0 +1,11 @@
+<div class="container">
+<h3>Создайте новый вопрос для теста <%= @test.title %></h3>
+  <form action="/tests/<%= params[:test_id] %>/questions" method="post">
+    <input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+    <p>
+      <label for="questions-body">Текст вопроса:</label>
+      <input class="col-12" type="text" name="question[body]" id="questions-body">
+    </p>
+    <input class="btn-primary" type="submit" value="Создать">
+  </form>
+</div>

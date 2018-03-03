@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <ol>
+      <% @tests.each do |test| %>
+        <div class="col-12">
+          <li>
+            <%= link_to test.title, test %>
+            <p>Level: <%= test.level %></p>
+          </li>
+        </div>
+      <% end %>
+    </ol>
+  </div>
+</div>

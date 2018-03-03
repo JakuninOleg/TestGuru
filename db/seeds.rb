@@ -6,32 +6,48 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Category.create([{ name: 'Ruby' },
-                 { name: 'Javascript' },
-                 { name: 'Python' },
-                 { name: 'HTML' }])
+p 'Создаем Админа'
+admin = Admin.create(name: 'Jakunin Oleg')
+p 'Админ создан'
 
-Admin.create(name: 'Jakunin Oleg')
+p 'Создаем Категории'
+categories = Category.create([{ name: 'Ruby' },
+                              { name: 'Javascript' },
+                              { name: 'Python' },
+                              { name: 'HTML' }])
+p 'Категории созданы'
 
-Test.create([{ title: 'OOP', category_id: 1, admin_id: 1 },
-             { title: 'React', level: 4, category_id: 2, admin_id: 1 },
-             { title: 'Big Data', level: 3, category_id: 3, admin_id: 1 },
-             { title: 'Bootstrap', level: 0, category_id: 4, admin_id: 1 },
-             { title: 'Metaprogramming', category_id: 1, admin_id: 1 },
-             { title: 'Rails', level: 6, category_id: 1, admin_id: 1 }])
+p 'Создаем Тесты'
+tests = Test.create([{ title: 'OOP', category: categories.first, admin: admin },
+             { title: 'React', level: 4, category: categories[1], admin: admin },
+             { title: 'Bootstrap', level: 0, category: categories[3], admin: admin },
+             { title: 'Metaprogramming', level: 5, category: categories.first, admin: admin },
+             { title: 'Rails', level: 6, category: categories.first, admin: admin }])
+p 'Тесты созданы'
 
-User.create([{ name: 'Student1', email: 'student1@gmail.com' },
+p 'Создаём вопросы'
+questions = Question.create([{ body: 'What is a class?', test: tests.first },
+                             { body: 'How to inherit from another class?', test: tests.first },
+                             { body: 'Component lifecycle', test: tests[1] },
+                             { body: 'Instrument to make native apps with React', test: tests[1] },
+                             { body: 'What is metaprogramming?', test: tests[3] },
+                             { body: 'Grid structure', test: tests[2] },
+                             { body: 'How to delete database?', test: tests.last }])
+p 'Вопросы созданы'
+
+p 'Создаем ответы'
+Answer.create([{ body: 'Class is an object and object is a class', correct: true,               question: questions.first },
+               { body: 'ComponentDidMount, ComponentWillMount, etc.', question: questions[2] },
+               { body: 'Using < symbol', correct: true, question: questions[1] },
+               { body: 'React Native', correct: true, question: questions[3] },
+               { body: 'Some magic', question: questions[4] },
+               { body: '12-column layout', correct: true, question: questions[5] },
+               { body: 'rails db:drop', correct: true, question: questions[6] }])
+p 'Ответы созданы'
+
+users = User.create([{ name: 'Student1', email: 'student1@gmail.com' },
              { name: 'Student2', email: 'student2@gmail.com' }])
 
-Question.create([{ body: 'What is a class?', test_id: 1 },
-                 { body: 'Component lifecycle', test_id: 2 },
-                 { body: 'Grid structure', test_id: 4 }])
-
-Answer.create([{ body: 'Class is an object and object is a class', correct: true, question_id: 1 },
-               { body: 'ComponentDidMount, ComponentWillMount, etc.', question_id: 3 }])
-
-Admin.create(name: 'Jakunin Oleg')
-
-TestPassage.create([{ user_id: 1, test_id: 1 },
-                    { user_id: 1, test_id: 2 },
-                    { user_id: 2, test_id: 3 }])
+TestPassage.create([{ user: users.first, test: tests.first },
+                    { user: users.first, test: tests[1] },
+                    { user: users.last, test: tests[4] }])
