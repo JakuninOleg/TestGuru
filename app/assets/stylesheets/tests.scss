@@ -5,12 +5,7 @@
 
 .btn {
   a {
-    link {
-      text-decoration: none;
-      color: white;
-    }
-
-    &:visited {
+    link, &:visited {
       text-decoration: none;
       color: white;
     }
