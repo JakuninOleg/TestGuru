@@ -11,7 +11,7 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = @test.questions.create(question_params)
+    question = @test.questions.new(question_params)
     if question.save
       redirect_to test_path(question.test)
       flash[:notice] = "Вопрос #{question.body} успешно создан"
@@ -23,6 +23,7 @@ class QuestionsController < ApplicationController
   def destroy
     question = Question.destroy(params[:id])
     redirect_to test_path(question.test)
+    flash[:notice] = "Вопрос #{question.body} успешно удалён"
   end
 
   private
