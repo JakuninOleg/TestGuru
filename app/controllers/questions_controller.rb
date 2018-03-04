@@ -13,7 +13,7 @@ class QuestionsController < ApplicationController
   def create
     question = @test.questions.new(question_params)
     if question.save
-      redirect_to test_path(question.test)
+      redirect_to question.test
       flash[:notice] = "Вопрос #{question.body} успешно создан"
     else
       render :new
@@ -22,7 +22,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     question = Question.destroy(params[:id])
-    redirect_to test_path(question.test)
+    redirect_to question.test
     flash[:notice] = "Вопрос #{question.body} успешно удалён"
   end
 
