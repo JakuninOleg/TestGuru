@@ -4,12 +4,18 @@
     <% @test.questions.each do |question| %>
       <div class="col-12">
         <li>
-          <%= link_to question.body, test_question_path(@test, question) %>
-          <%= link_to 'x', test_question_path(@test, question), method: :delete  %>
+          <%= link_to question.body, question_path(question) %>
+          <%= link_to 'x', question_path(question), method: :delete  %>
         </li>
       </div>
     <% end %>
   </ol>
+  <% if flash[:notice] %>
+    <div class="row">
+      <div class="notice col-12">
+        <%= flash[:notice] %>
+      </div>
+    </div>
+  <% end %>
   <%= link_to 'Создать вопрос', new_test_question_path(@test), class: "btn btn-primary"  %>
 </div>
-

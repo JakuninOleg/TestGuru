@@ -1,10 +1,9 @@
 class QuestionsController < ApplicationController
-  before_action :find_test, only: :new
+  before_action :find_test, only: %i[new create]
 
   rescue_from ActiveRecord::RecordNotFound, with: :rescue_from_question_not_found
 
   def show
-    # @question = Question.find_by(id: params[:id], test_id: params[:test_id])
     @question = Question.find(params[:id])
   end
 
@@ -12,9 +11,10 @@ class QuestionsController < ApplicationController
   end
 
   def create
-    question = Question.create(body: question_params[:body], test_id: params[:test_id])
+    question = @test.questions.create(question_params)
     if question.save
       redirect_to test_path(question.test)
+      flash[:notice] = "Вопрос #{question.body} успешно создан"
     else
       render :new
     end
