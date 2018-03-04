@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="col-12"><%= @question.body %></div>
+  <ol>
+    <% @question.answers.each do |answer| %>
+      <div class="col-12">
+        <li>
+          <%= answer.body %>
+        </li>
+      </div>
+    <% end %>
+  </ol>
+</div>
