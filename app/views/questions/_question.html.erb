@@ -1,0 +1,8 @@
+<div class="col-12">
+  <li>
+    <%= link_to question.body, question %>
+    <%= link_to 'x', question, method: :delete, data: { confirm: 'Вы увеерены?'}  %>
+    <%= link_to 'Обновить', edit_question_path(question) %>
+  </li>
+</div>
+

@@ -1,21 +1,17 @@
 <div class="container">
-  <h2><%= @test.title %></h2>
+  <h2>
+    <%= @test.title %>
+  </h2>
   <ol>
-    <% @test.questions.each do |question| %>
-      <div class="col-12">
-        <li>
-          <%= link_to question.body, question_path(question) %>
-          <%= link_to 'x', question_path(question), method: :delete  %>
-        </li>
-      </div>
-    <% end %>
+    <%= render @questions %>
   </ol>
-  <% if flash[:notice] %>
-    <div class="row">
-      <div class="notice col-12">
-        <%= flash[:notice] %>
-      </div>
+  <%= render 'shared/flash' %>
+  <%= link_to 'Создать вопрос', new_test_question_path(@test),
+  class: "btn btn-primary"  %>
+  <div class="row">
+    <div class="col-12">
+      <%= render 'shared/back' %>
     </div>
-  <% end %>
-  <%= link_to 'Создать вопрос', new_test_question_path(@test), class: "btn btn-primary"  %>
+  </div>
 </div>
+
