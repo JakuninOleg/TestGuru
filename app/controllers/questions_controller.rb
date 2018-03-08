@@ -9,14 +9,14 @@ class QuestionsController < ApplicationController
   end
 
   def new
-    @question = Question.new
+    @question = @test.questions.build
   end
 
   def edit
   end
 
   def create
-    @question = @test.questions.new(question_params)
+    @question = @test.questions.build(question_params)
     if @question.save
       redirect_to @question.test
       flash[:notice] = "Вопрос #{@question.body} успешно создан"
