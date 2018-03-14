@@ -23,7 +23,7 @@ class TestPassage < ApplicationRecord
   end
 
   def result
-    (self.correct_questions / test.questions.count) * 100
+    (100 * self.correct_questions / test.questions.count)
   end
 
   def test_passed?
