@@ -1,0 +1,14 @@
+<div class="container">
+  <h3>Тест <%= @test_passage.test.title %> был завершён!</h3>
+  <h5>
+    Результат:
+    <% if @test_passage.test_passed? %>
+      <span class="text_green"><%= @test_passage.result %>%</span>
+      <p>Вы успешно прошли тест!</p>
+    <% else %>
+      <span class="text_red"><%= @test_passage.result %>%</span>
+      <p>Тест не пройден!</p>
+    <% end %>
+  </h5>
+  <p><%= link_to 'Вернуться к списку тестов', tests_path %></p>
+</div>

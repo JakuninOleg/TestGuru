@@ -1,7 +1,16 @@
 <div class="container">
-  <div class="col-12"><%= @question.body %></div>
+  <h2>
+    <%= @question.body %>
+  </h2>
   <ol>
     <%= render @answers %>
   </ol>
-  <%= render 'shared/back' %>
+  <%= render 'shared/flash' %>
+  <%= link_to 'Создать ответ', new_question_answer_path(@question),
+  class: "btn btn-primary"  %>
+  <div class="row">
+    <div class="col-12">
+      <%= render 'shared/back' %>
+    </div>
+  </div>
 </div>
