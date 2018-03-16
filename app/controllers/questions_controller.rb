@@ -18,8 +18,7 @@ class QuestionsController < ApplicationController
   def create
     @question = @test.questions.build(question_params)
     if @question.save
-      redirect_to @question.test
-      flash[:notice] = "Вопрос #{@question.body} успешно создан"
+      redirect_to @question.test, alert: "Вопрос #{@question.body} успешно создан"
     else
       render :new
     end
@@ -27,8 +26,7 @@ class QuestionsController < ApplicationController
 
   def update
     if @question.update(question_params)
-      redirect_to @question.test
-      flash[:notice] = "Вопрос #{@question.body} успешно обновлён"
+      redirect_to @question.test, alert: "Вопрос #{@question.body} успешно обновлён"
     else
       render :edit
     end
@@ -36,8 +34,7 @@ class QuestionsController < ApplicationController
 
   def destroy
     question = Question.destroy(params[:id])
-    redirect_to question.test
-    flash[:notice] = "Вопрос #{question.body} успешно удалён"
+    redirect_to question.test, alerrt: "Вопрос #{question.body} успешно удалён"
   end
 
   private

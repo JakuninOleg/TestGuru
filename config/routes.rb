@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
+  root 'static_pages#home'
+
+  get '/about', to: 'static_pages#about'
+  get '/about/author', to: 'static_pages#author'
+  get 'users/new'
+  get :signup, to: 'users#new'
+  get :login, to: 'sessions#new'
+  delete :quit, to: 'sessions#destroy'
+
+  resources :users, only: :create
+  resources :sessions, only: :create
+
   resources :tests do
     resources :questions, shallow: true, except: :index do
       resources :answers, shallow: true, except: :index
@@ -14,9 +28,4 @@ Rails.application.routes.draw do
       get :result
     end
   end
-
-  root 'static_pages#home'
-
-  get '/about', to: 'static_pages#about'
-  get '/about/author', to: 'static_pages#author'
 end
