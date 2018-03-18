@@ -6,7 +6,8 @@ class User < ApplicationRecord
 
   has_secure_password
 
-  validates :name, :password, presence: true
+  validates :name, presence: true, uniqueness: true
+  validates :password, presence: true
   validates :email, format: VALID_EMAIL, uniqueness: true
 
   def passed_tests_by_level(level)
