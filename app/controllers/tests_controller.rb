@@ -1,6 +1,5 @@
 class TestsController < ApplicationController
   before_action :find_test, only: %i[show start edit update]
-  before_action :find_user, only: :start
 
   def index
     @tests = Test.all
@@ -22,8 +21,7 @@ class TestsController < ApplicationController
     @test = Test.new(test_params)
     @test.admin = Admin.first
     if @test.save
-      redirect_to tests_path
-      flash[:notice] = "Тест #{@test.title} успешно создан"
+      redirect_to tests_path, alert: "Тест #{@test.title} успешно создан"
     else
       render :new
     end
@@ -31,8 +29,7 @@ class TestsController < ApplicationController
 
   def update
     if @test.update(test_params)
-      redirect_to tests_path
-      flash[:notice] = "Тест #{@test.title} успешно обновлён"
+      redirect_to tests_path, alert: "Тест #{@test.title} успешно обновлён"
     else
       render :edit
     end
@@ -40,24 +37,19 @@ class TestsController < ApplicationController
 
   def destroy
     test = Test.destroy(params[:id])
-    redirect_to tests_path
-    flash[:notice] = "Тест #{test.title} успешно удалён"
+    redirect_to tests_path, alert: "Тест #{test.title} успешно удалён"
   end
 
 
   def start
-    @user.tests.push(@test)
-    redirect_to @user.test_passage(@test)
+    current_user.tests.push(@test)
+    redirect_to current_user.test_passage(@test)
   end
 
   private
 
   def find_test
     @test = Test.find(params[:id])
-  end
-
-  def find_user
-    @user = User.first
   end
 
   def test_params
