@@ -3,22 +3,17 @@ class ApplicationController < ActionController::Base
 
   before_action :authenticate_user!
 
-  helper_method :current_user, :logged_in?
+  helper_method :admin?
 
-  private
-
-  def authenticate_user!
-    unless current_user
-      cookies[:path] = request.fullpath
-      redirect_to login_path, alert: 'Login first'
-    end
+  def admin?
+    current_user.is_a?(Admin)
   end
 
-  def current_user
-    @current_user ||= User.find_by_id(session[:user_id]) if session[:user_id]
+  def after_sign_in_path_for(resource)
+    resource.is_a?(Admin) ? admin_tests_path : super
   end
 
-  def logged_in?
-    current_user.present?
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:first_name, :last_name])
   end
 end

@@ -1,0 +1,16 @@
+<div class="form-group">
+  <%= form_with model: [:admin, @question, @answer], local: true do |form| %>
+  <p>
+    <%= form.label 'Текст ответа' %>
+    <%= form.text_field :body, id: 'answer_Текст ответа', class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label 'Ответ верный?' %>
+    <%= form.check_box :correct, id: 'answer_Ответ верный', class: 'form-control' %>
+  </p>
+
+  <%= form.submit ( form.object.new_record? ? "Создать ответ" : "Изменить" ),
+  class: 'btn btn-primary' %>
+  <% end %>
+</div>

@@ -1,0 +1,11 @@
+<div class="col-12">
+  <li>
+  <%= link_to test.title, admin_test_path(test) %>
+    <%= link_to 'x', admin_test_path(test), method: :delete, data: { confirm: 'Вы увеерены?'}  %>
+    <%= link_to 'Обновить', edit_admin_test_path(test) %>
+    <p>Уровень: <%= test.level %></p>
+    <p>Категория: <%= test.category.name %></p>
+    <p>Кол-во вопросов: <%= test.questions.size %></p>
+  </li>
+  <br />
+</div>

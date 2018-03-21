@@ -1,9 +1,0 @@
-<div class="form-group">
-  <%= form_with model: [@test, @question], local: true do |form| %>
-    <%= form.label 'Текст вопроса' %>
-    <%= form.text_field :body, id: 'question_Текст вопроса', class: 'form-control' %>
-    <br />
-    <%= form.submit ( form.object.new_record? ? "Создать вопрос" : "Изменить" ),
-    class: 'btn btn-primary' %>
-  <% end %>
-</div>

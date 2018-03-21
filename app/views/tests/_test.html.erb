@@ -1,8 +1,6 @@
 <div class="col-12">
   <li>
-    <%= link_to test.title, test %>
-    <%= link_to 'x', test, method: :delete, data: { confirm: 'Вы увеерены?'}  %>
-    <%= link_to 'Обновить', edit_test_path(test) %>
+    <h5><%= test.title %></h5>
     <p>Уровень: <%= test.level %></p>
     <p>Категория: <%= test.category.name %></p>
     <p>Кол-во вопросов: <%= test.questions.size %></p>
