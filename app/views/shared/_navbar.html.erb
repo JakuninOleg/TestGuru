@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-xxl navbar-light bg-light">
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
   <div class="mr-2">
-    <% if admin? %>
+    <% if user_signed_in? && current_user.admin? %>
       Welcome Admin <%= current_user.last_name %> <%= current_user.first_name %>
       <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
     <% elsif user_signed_in? %>

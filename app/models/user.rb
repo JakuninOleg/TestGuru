@@ -19,4 +19,8 @@ class User < ApplicationRecord
   def full_name
     last_name + first_name
   end
+
+  def admin?
+    self.is_a?(Admin)
+  end
 end
