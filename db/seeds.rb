@@ -6,10 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-p 'Создаем Админа'
-admin = Admin.create(name: 'Jakunin Oleg')
-p 'Админ создан'
-
 p 'Создаем Категории'
 categories = Category.create([{ name: 'Ruby' },
                               { name: 'Javascript' },

@@ -1,5 +1,3 @@
-class Admin < ApplicationRecord
-  has_many :tests
-
-  validates :name, presence: true
+class Admin < User
+  validates :first_name, :last_name, presence: true
 end

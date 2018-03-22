@@ -1,0 +1,9 @@
+<div class="col-12">
+  <li>
+    <%= answer.body %>
+    <%= link_to 'x', admin_answer_path(answer), method: :delete, data: { confirm: 'Вы увеерены?'} %>
+    <%= link_to 'Обновить', edit_admin_answer_path(answer) %>
+    <br />
+    <%= answer.correct %>
+  </li>
+</div>

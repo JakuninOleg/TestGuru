@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <ol>
+      <%= render @tests %>
+    </ol>
+  </div>
+  <%= link_to 'Создать тест', new_admin_test_path,
+  class: "btn btn-primary"  %>
+  <div class="row">
+    <div class="col-12">
+      <%= render 'shared/back' %>
+    </div>
+  </div>
+</div>

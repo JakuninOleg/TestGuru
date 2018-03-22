@@ -1,12 +1,15 @@
 <nav class="navbar navbar-expand-xxl navbar-light bg-light">
   <%= link_to 'TestGuru', root_path, class: 'navbar-brand' %>
   <div class="mr-2">
-    <% if logged_in? %>
-      Welcome <%= current_user.name %>
-      <%= link_to 'Выйти', quit_path, method: :delete %>
+    <% if current_user&.admin? %>
+      Welcome Admin <%= current_user.last_name %> <%= current_user.first_name %>
+      <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+    <% elsif user_signed_in? %>
+      Welcome <%= current_user.email %>
+      <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
     <% else %>
-      <%= link_to 'Логин', login_path %>
-      <%= link_to 'Регистрация', signup_path %>
+      <%= link_to 'Логин', new_user_session_path %>
+      <%= link_to 'Регистрация', new_user_registration_path %>
     <% end %>
   </div>
 </nav>
