@@ -30,4 +30,44 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  start: 'Start'
   hello: "Hello world"
+  helpers:
+    submit:
+      test:
+        create: 'Create test'
+        update: 'Update test'
+      test_passage:
+        create: 'Next'
+    label:
+      test:
+        title: 'Test title'
+        level: 'Level'
+        category_id: 'Category'
+  tests:
+    index:
+      header: 'Available tests'
+  home:
+    tests: 'Tests'
+  admin:
+    tests:
+      index:
+        create_test: 'Create test'
+      test:
+        update_test: 'Update'
+      new:
+        header: 'Create new test'
+      edit:
+        header: 'Edit test %{title}'
+  tests:
+    index:
+      header: 'Available tests'
+    test:
+      title: 'Test %{title}'
+      level: 'Level: %{level}'
+      category: 'Category: %{category}'
+      question_size: 'Number of questions: %{question_size}'
+  test_passages:
+    show:
+      title: '%{title} test running'
+      question: 'Question %{current_question} / %{number_of_questions}'
