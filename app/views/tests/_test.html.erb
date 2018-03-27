@@ -1,10 +1,10 @@
 <div class="col-12">
   <li>
-    <h5><%= test.title %></h5>
-    <p>Уровень: <%= test.level %></p>
-    <p>Категория: <%= test.category.name %></p>
-    <p>Кол-во вопросов: <%= test.questions.size %></p>
-    <p><%= button_to 'Start', start_test_path(test), class: 'btn btn-primary' %></p>
+    <h5><%= t('.title', title: test.title) %></h5>
+    <p><%= t('.level', level: test.level) %></p>
+    <p><%= t('.category', category: test.category.name) %></p>
+    <p><%= t('.question_size', question_size: test.questions.size) %></p>
+    <p><%= button_to t('start'), start_test_path(test), class: 'btn btn-primary' %></p>
   </li>
   <br />
 </div>

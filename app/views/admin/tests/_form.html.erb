@@ -1,22 +1,21 @@
 <div class="form-group">
   <%= form_with model: [:admin, @category, @test], local: true do |form| %>
   <p>
-    <%= form.label 'Название теста' %>
+    <%= form.label :title %>
     <%= form.text_field :title, id: 'question_Название теста', class: 'form-control' %>
   </p>
 
   <p>
-    <%= form.label 'Уровень сложности' %>
+    <%= form.label :level %>
     <%= form.number_field :level, id: 'question_Уровень сложности', value: @test.level, class: 'form-control' %>
   </p>
 
   <p>
-    <%= form.label 'Категория' %>
+    <%= form.label :category_id %>
     <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class: 'form-control'}) %>
   </p>
 
-  <%= form.submit ( form.object.new_record? ? "Создать тест" : "Изменить" ),
-  class: 'btn btn-primary' %>
+  <%= form.submit class: 'btn btn-primary' %>
   <% end %>
 </div>
 

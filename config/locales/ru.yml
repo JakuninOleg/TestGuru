@@ -1,4 +1,5 @@
 ru:
+  start: 'Начать'
   activerecord:
     errors:
       messages:
@@ -264,3 +265,44 @@ ru:
       long: "%d %B %Y, %H:%M"
       short: "%d %b, %H:%M"
     pm: вечера
+  helpers:
+    submit:
+      test:
+        create: 'Создать тест'
+        update: 'Обновить тест'
+      test_passage:
+        submit: 'Далее'
+      user:
+        create: 'Войти'
+      devise:
+        create: 'Регистрация'
+    label:
+      test:
+        title: 'Название теста'
+        level: 'Уровень'
+        category_id: 'Категория'
+  home:
+    tests: 'Тесты'
+  admin:
+    tests:
+      index:
+        create_test: 'Создать тест'
+      test:
+        update_test: 'Обновить'
+      new:
+        header: 'Создайте новый тест'
+      edit:
+        header: 'Редактирование теста %{title}'
+  tests:
+    index:
+      header: 'Доступные тесты'
+    test:
+      title: 'Тест %{title}'
+      level: 'Уровень: %{level}'
+      category: 'Категория: %{category}'
+      question_size: 'Количество вопросов: %{question_size}'
+  test_passages:
+    show:
+      title: 'Прохождение теста %{title}'
+      question: 'Вопрос %{current_question} / %{number_of_questions}'
+

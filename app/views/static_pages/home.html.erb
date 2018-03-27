@@ -5,7 +5,11 @@
     </div>
     <div class="col-12">
       <h6>
-        <%= link_to 'Тесты', tests_path %>
+        <% if current_user&.admin?  %>
+          <%= link_to t('home.tests'), admin_tests_path  %>
+        <% else %>
+          <%= link_to t('home.tests'), tests_path %>
+        <% end %>
       </h6>
     </div>
   </div>

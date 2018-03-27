@@ -1,6 +1,6 @@
-<h1>Прохождение теста <%= @test_passage.test.title %></h1>
+<h1><%= t('.title', title: @test_passage.test.title) %></h1>
 
-<h5>Вопрос <%= @test_passage.current_question_number %> / <%= @test_passage.number_of_questions %></h5>
+<h5><%= t('.question', current_question: @test_passage.current_question_number, number_of_questions: @test_passage.number_of_questions) %></h5>
 
 <b>
   <%= @test_passage.current_question.body %>
@@ -16,5 +16,5 @@ local: true, method: :put do |form| %>
     </p>
   <% end %>
 
-  <p><%= form.submit 'Далее', class: 'btn btn-primary' %></p>
+  <p><%= form.submit class: 'btn btn-primary' %></p>
 <% end %>
