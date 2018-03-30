@@ -305,4 +305,7 @@ ru:
     show:
       title: 'Прохождение теста %{title}'
       question: 'Вопрос %{current_question} / %{number_of_questions}'
+    gist:
+      success: 'Gist успешно создан'
+      failure: 'Произошла ошибка'
 
