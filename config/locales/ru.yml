@@ -1,5 +1,6 @@
 ru:
   start: 'Начать'
+  gist-description: "Вопрос из теста %{title} на сайте ТестГуру"
   activerecord:
     errors:
       messages:
@@ -306,6 +307,6 @@ ru:
       title: 'Прохождение теста %{title}'
       question: 'Вопрос %{current_question} / %{number_of_questions}'
     gist:
-      success: 'Gist успешно создан'
+      success: 'Gist успешно создан по адресу: %{url}'
       failure: 'Произошла ошибка'
 

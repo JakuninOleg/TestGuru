@@ -32,6 +32,7 @@
 en:
   start: 'Start'
   hello: "Hello world"
+  gist-description: "A question about %{title} from TestGuru"
   helpers:
     submit:
       test:
@@ -71,3 +72,6 @@ en:
     show:
       title: '%{title} test running'
       question: 'Question %{current_question} / %{number_of_questions}'
+    gist:
+      success: 'Gist successfully created at: %{url}'
+      failure: 'Something went wrong'
