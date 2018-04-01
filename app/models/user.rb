@@ -5,6 +5,7 @@ class User < ApplicationRecord
 
   has_many :test_passages
   has_many :tests, through: :test_passages
+  has_many :gists
 
   validates :last_name, :first_name, presence: true
   validates :email, uniqueness: true
