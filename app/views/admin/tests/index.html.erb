@@ -1,9 +1,24 @@
 <div class="container">
   <h3><%= t('tests.index.header') %></h3>
   <div class="row">
-    <ol>
-      <%= render @tests %>
-    </ol>
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th scope="col" class="sort-by-title pointer">
+            Title
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success' %>
+          </th>
+          <th scope="col">Level</th>
+          <th scope="col">Questions</th>
+          <th scope="col" colspan="2">Actions</th>
+          <th scope="col">Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @tests %>
+      </tbody>
+    </table>
   </div>
   <%= link_to t('.create_test'), new_admin_test_path,
   class: "btn btn-primary"  %>
