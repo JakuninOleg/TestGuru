@@ -1,13 +1,28 @@
 <div class="container">
   <h3><%= t('.header') %></h3>
   <div class="row">
-    <ol>
-      <%= render @tests %>
-    </ol>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <%= render 'shared/back' %>
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th scope="col" class="sort-by-title pointer">
+            Title
+            <%= octicon 'arrow-up', class: 'text-success hide' %>
+            <%= octicon 'arrow-down', class: 'text-success' %>
+          </th>
+          <th scope="col">Level</th>
+          <th scope="col">Category</th>
+          <th scope="col">Questions</th>
+          <th scope="col">Start</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @tests %>
+      </tbody>
+    </table>
+    <div class="row">
+      <div class="col-12">
+        <%= render 'shared/back' %>
+      </div>
     </div>
   </div>
 </div>
