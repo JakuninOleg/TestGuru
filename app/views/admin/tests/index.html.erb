@@ -1,6 +1,7 @@
 <div class="container">
   <h3><%= t('tests.index.header') %></h3>
   <div class="row">
+    <%= render 'shared/errors', resource: @test %>
     <table class="table table-light">
       <thead>
         <tr>

@@ -1,8 +1,18 @@
 <tr>
-  <td><%= link_to test.title, admin_test_path(test) %></td>
+  <td>
+    <%= link_to test.title, admin_test_path(test),
+                            class: 'test-title',
+                            data: { test_id: test.id } %>
+    <%= render 'form_inline', test: test == @test ? @test : test %>
+  </td>
   <td><p><%= t('tests.test.level', level: test.level) %></p></td>
   <td><p><%= t('tests.test.question_size', question_size: test.questions.size) %></p></td>
   <td><%= link_to 'x', admin_test_path(test), method: :delete, data: { confirm: 'Вы уверены?'}  %></td>
-  <td><%= link_to t('.update_test'), edit_admin_test_path(test) %></td>
+  <td>
+    <%= link_to t('.update_test'),
+                      edit_admin_test_path(test),
+                      class: 'form-inline-link',
+                      data: { test_id: test.id } %>
+  </td>
   <td><%= t('tests.test.category', category: test.category.name) %></td>
 </tr>
