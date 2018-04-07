@@ -1,16 +1,19 @@
 <footer class="footer font-small">
   <div class="container">
     <div class="row pt-5 mb-3 text-center justify-content-center">
-    <div class="col-md-4">
+    <div class="col-md-3">
         <h6 class="title font-weight-bold"><%= link_to 'О проекте', about_path %></h6>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h6 class="title font-weight-bold">
           <%=  github_url('JakuninOleg', 'TestGuru')%>
         </h6>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-3">
         <h6 class="title font-weight-bold"><%= link_to 'Автор', about_author_path %></h6>
+      </div>
+      <div class="col-md-3">
+        <h6 class="title font-weight-bold"><%= link_to 'Обратная связь', new_feedback_path %></h6>
       </div>
     </div>
   </div>
