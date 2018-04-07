@@ -1,0 +1,15 @@
+<div class="form-group">
+  <%= form_with model: @feedback, local: true do |form| %>
+    <p>
+      <%= form.label :title %>
+      <%= form.text_field :title, class: 'form-control'  %>
+    </p>
+
+    <p>
+      <%= form.label :body %>
+      <%= form.text_area :body, class: 'form-control' %>
+    </p>
+
+    <%= form.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>
