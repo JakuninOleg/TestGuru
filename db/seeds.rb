@@ -6,12 +6,12 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# p 'Создаем Категории'
-# categories = Category.create([{ name: 'Ruby' },
-#                               { name: 'Javascript' },
-#                               { name: 'Python' },
-#                               { name: 'HTML' }])
-# p 'Категории созданы'
+p 'Создаем Категории'
+categories = Category.create([{ name: 'Ruby' },
+                              { name: 'Javascript' },
+                              { name: 'Python' },
+                              { name: 'HTML' }])
+p 'Категории созданы'
 
 # p 'Создаем Тесты'
 # tests = Test.create([{ title: 'OOP', category: categories.first, admin: admin },
