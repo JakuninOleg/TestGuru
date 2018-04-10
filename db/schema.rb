@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180407200635) do
+ActiveRecord::Schema.define(version: 20180410222357) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -103,4 +103,5 @@ ActiveRecord::Schema.define(version: 20180407200635) do
   end
 
   add_foreign_key "feedbacks", "users"
+  add_foreign_key "test_passages", "questions", column: "current_question_id"
 end
