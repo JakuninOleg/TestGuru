@@ -1,0 +1,24 @@
+<div class="container">
+  <h3>Badges</h3>
+  <div class="row">
+    <%= render 'shared/errors', resource: @badge %>
+    <table class="table table-light">
+      <thead>
+        <tr>
+          <th scope="col">Название</th>
+          <th scope="col">Изображение</th>
+          <th scope="col">Правило</th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render @badges %>
+      </tbody>
+    </table>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <%= render 'shared/back' %>
+    </div>
+  </div>
+</div>
+

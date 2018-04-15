@@ -9,9 +9,12 @@
           <p><%= link_to t('home.tests'), admin_tests_path  %></p>
           <p><%= link_to 'Пройти тесты', tests_path  %></p>
           <p><%= link_to 'Gists', admin_gists_path %></p>
+          <p><%= link_to 'Badges', admin_badges_path %></p>
         <% else %>
-          <%= link_to t('home.tests'), tests_path %>
+          <p><%= link_to t('home.tests'), tests_path %></p>
         <% end %>
+        <p><%= link_to 'Все достижения', badges_path  %></p>
+        <p><%= link_to 'Мои достижения', my_badges_path %></p>
       </h6>
     </div>
   </div>

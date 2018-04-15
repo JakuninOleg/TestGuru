@@ -1,0 +1,20 @@
+<div class="form-group">
+  <%= form_with model: [:admin, @badge], local: true do |form| %>
+  <p>
+    <%= form.label :name %>
+    <%= form.text_field :name, id: 'badge_Название', class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :image %>
+    <%= form.text_field :image, id: 'badge_Изображение', class: 'form-control' %>
+  </p>
+
+  <p>
+    <%= form.label :rule %>
+    <%= form.text_field :rule, id: 'badge_Правило', class: 'form-control' %>
+  </p>
+
+  <%= form.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>

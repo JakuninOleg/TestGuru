@@ -4,6 +4,14 @@ class TestPassage < ApplicationRecord
   belongs_to :current_question, class_name: 'Question', optional: true
 
   before_save :set_question
+  before_update :test_passed
+
+  scope :correct_passed_tests, -> (user) {
+    user.test_passages.where(passed: true)
+  }
+
+  scope :passed_by_level, -> (user, level) { user.test_passages.
+    joins(:test).where(tests: { level: level })}
 
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
@@ -32,8 +40,12 @@ class TestPassage < ApplicationRecord
 
   private
 
+  def test_passed
+    self.passed = test_passed? if completed?
+  end
+
   def set_question
-    self.current_question = self.current_question.nil? ? first_question : next_question
+    self.current_question = self.completed? ? first_question : next_question
   end
 
   def correct_answer?(answer_ids)

@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   get '/about/author', to: 'static_pages#author'
 
+  get '/my_badges', to: 'users/badges#index'
+
+  resources :badges, only: :index
+
   resources :tests, only: :index do
     member do
       post :start
@@ -30,5 +34,6 @@ Rails.application.routes.draw do
     end
 
     resources :gists, only: :index
+    resources :badges, shallow: true
   end
 end
