@@ -20,4 +20,8 @@ class Test < ApplicationRecord
   def self.categories_array(category)
     by_category(category).pluck(:title)
   end
+
+  def timer_expired?
+    timer && timer < 0
+  end
 end

@@ -22,12 +22,24 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def terminate!
+    current_question = nil
+  end
+
   def result
     (100 * self.correct_questions / test.questions.count)
   end
 
   def test_passed?
     result >= 85
+  end
+
+  def time_over?
+    set_timer < Time.now
+  end
+
+  def set_timer
+    created_at + test.timer
   end
 
   private
