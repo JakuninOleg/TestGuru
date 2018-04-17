@@ -35,14 +35,18 @@ class TestPassage < ApplicationRecord
   end
 
   def time_over?
-    set_timer < Time.now
+    expire_at < Time.current if test.timer
   end
 
-  def set_timer
-    created_at + test.timer
+  def time_left
+    (expire_at - Time.current).to_i if test.timer
   end
 
   private
+
+  def expire_at
+    created_at + test.timer if test.timer
+  end
 
   def set_question
     self.current_question = self.current_question.nil? ? first_question : next_question

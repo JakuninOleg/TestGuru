@@ -11,7 +11,7 @@
 <h5><%= t('.question', current_question: @test_passage.current_question_number, number_of_questions: @test_passage.number_of_questions) %></h5>
 
 <% if @test_passage.test.timer %>
-  <%= content_tag :span, '', class: 'timer', data: { timer: @test_passage.test.timer } %>
+  <%= content_tag :span, '', class: 'timer', data: { timer: @test_passage.time_left } %>
 <% end %>
 
 <p>

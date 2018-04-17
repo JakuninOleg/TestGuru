@@ -8,11 +8,12 @@ class TestPassagesController < ApplicationController
   end
 
   def update
-    if @test_passage.completed? && !time_is_over?
+    if @test_passage.completed? && !@test_passage.time_over?
       @test_passage.accept!(params[:answer_ids])
       TestsMailer.completed_test(@test_passage).deliver_now
       redirect_to result_test_passage_path(@test_passage)
     else
+      @test_passage.terminate!
       redirect_to tests_path
     end
   end
@@ -28,10 +29,6 @@ class TestPassagesController < ApplicationController
     end
 
     redirect_to @test_passage, flash_options
-  end
-
-  def time_is_over?
-    @test_passage.test.timer && @test_passage.time_over?
   end
 
   private
