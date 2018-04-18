@@ -28,4 +28,8 @@ class User < ApplicationRecord
   def admin?
     is_a?(Admin)
   end
+
+  def passed_by_level(level)
+    test_passages.joins(:test).where(tests: { level: level })
+  end
 end

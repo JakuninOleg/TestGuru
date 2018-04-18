@@ -12,9 +12,19 @@
 
   <p>
     <%= form.label :rule %>
-    <%= form.text_field :rule, id: 'badge_Правило', class: 'form-control' %>
+    <%= form.select(:rule, options_for_select([['Первая попытка', 1],
+                                               ['Все категории', 2],
+                                               ['Все тесты уровня', 3]],
+                    selected: @badge.rule), { promt: true},
+                    { class: 'form-control' }) %>
+  </p>
+
+  <p>
+    <%= form.label :parameter %>
+    <%= form.text_field :parameter, id: 'badge_Параметр', class: 'form-control' %>
   </p>
 
   <%= form.submit class: 'btn btn-primary' %>
   <% end %>
 </div>
+

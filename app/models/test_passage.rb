@@ -10,9 +10,6 @@ class TestPassage < ApplicationRecord
     user.test_passages.where(passed: true)
   }
 
-  scope :passed_by_level, -> (user, level) { user.test_passages.
-    joins(:test).where(tests: { level: level })}
-
   def accept!(answer_ids)
     self.correct_questions += 1 if correct_answer?(answer_ids)
     save!
