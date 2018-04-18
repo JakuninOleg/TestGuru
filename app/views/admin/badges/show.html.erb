@@ -1,0 +1,14 @@
+<h3>
+  <%= @badge.name %>
+</h3>
+
+<p>
+  <%= image_tag((@badge.image), class: 'img-height-50 img-circle') %>
+</p>
+
+<p>
+  <%= @badge.rule %>
+</p>
+
+<%= link_to 'Edit', edit_admin_badge_path(@badge) %>
+<%= render 'shared/back' %>
