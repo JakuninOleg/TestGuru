@@ -22,6 +22,10 @@ class TestPassage < ApplicationRecord
     current_question.nil?
   end
 
+  def terminate!
+    current_question = nil
+  end
+
   def result
     (100 * self.correct_questions / test.questions.count)
   end
@@ -30,7 +34,19 @@ class TestPassage < ApplicationRecord
     result >= 85
   end
 
+  def time_over?
+    expire_at < Time.current if test.timer
+  end
+
+  def time_left
+    (expire_at - Time.current).to_i if test.timer
+  end
+
   private
+
+  def expire_at
+    created_at + test.timer if test.timer
+  end
 
   def set_question
     self.current_question = self.current_question.nil? ? first_question : next_question

@@ -1,35 +1,3 @@
-/* line 1, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/flashes.scss */
-.flash {
-  border: 2px solid;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-/* line 7, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/flashes.scss */
-.flash-notice {
-  border-color: #3c85e0;
-}
-
-/* line 11, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/flashes.scss */
-.flash-alert {
-  border-color: #ef2727;
-}
-/* line 1, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/global.scss */
-.pointer {
-  cursor: pointer;
-}
-
-/* line 5, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/global.scss */
-.hide {
-  display: none;
-}
-
-/* line 9, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/global.scss */
-.octicon {
-  display: inline-block;
-  vertical-align: text-top;
-  fill: currentColor;
-}
 /*!
  * Bootstrap v4.0.0 (https://getbootstrap.com)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -10003,15 +9971,13 @@ a.text-dark:hover, a.text-dark:focus {
     border: 1px solid #ddd !important;
   }
 }
-/* line 5, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/test_passages.scss */
-.text_green {
-  color: green;
+/* line 1, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/typography/icons.scss */
+.octicon {
+  display: inline-block;
+  vertical-align: text-top;
+  fill: currentColor;
 }
 
-/* line 9, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/test_passages.scss */
-.text_red {
-  color: red;
-}
 /* line 8, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/tests.scss */
 .btn a link, .btn a:visited {
   text-decoration: none;
@@ -10038,25 +10004,40 @@ body {
 .footer {
   flex-shrink: 0;
 }
-/* line 1, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/typography/icons.scss */
-.octicon {
-  display: inline-block;
-  vertical-align: text-top;
-  fill: currentColor;
+
+/* line 5, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/test_passages.scss */
+.text_green {
+  color: green;
 }
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
 
+/* line 9, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/test_passages.scss */
+.text_red {
+  color: red;
+}
 
- */
+/* line 1, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/flashes.scss */
+.flash {
+  border: 2px solid;
+  padding: 10px;
+  border-radius: 5px;
+}
 
+/* line 7, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/flashes.scss */
+.flash-notice {
+  border-color: #3c85e0;
+}
+
+/* line 11, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/flashes.scss */
+.flash-alert {
+  border-color: #ef2727;
+}
+
+/* line 1, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/global.scss */
+.pointer {
+  cursor: pointer;
+}
+
+/* line 5, /Users/olegakunin/code/JakuninOleg/thinknetica/TestGuru/app/assets/stylesheets/global.scss */
+.hide {
+  display: none;
+}

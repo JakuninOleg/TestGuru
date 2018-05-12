@@ -10,6 +10,11 @@
     <%= form.number_field :level, id: 'question_Уровень сложности', value: @test.level, class: 'form-control' %>
   </p>
 
+   <p>
+    <%= form.label :timer %>
+    <%= form.number_field :timer, id: 'question_Таймер', class: 'form-control' %>
+  </p>
+
   <p>
     <%= form.label :category_id %>
     <%= form.collection_select(:category_id, Category.all, :id, :name, {}, {class: 'form-control'}) %>
